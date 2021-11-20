@@ -17,12 +17,19 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const { default: axios } = require('axios');
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const { conn, Genre } = require('./src/db.js');
+const { API_KEY } = process.env;
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+  server.listen(3001, async () => {
+    const infoApi = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`);
+    const content = infoApi.data.results.map(el => el.name)
+    content.forEach(el =>{
+      Promise.all([Genre.create({name: el})]) 
+    })
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
