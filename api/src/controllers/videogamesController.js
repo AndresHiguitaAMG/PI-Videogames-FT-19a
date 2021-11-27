@@ -23,7 +23,6 @@ const videogamesPerPage = async () => {
 };
 
 
-
 const getVideogames = async(req, res, next) =>{
     try{
         let {
@@ -87,12 +86,13 @@ const getVideogames = async(req, res, next) =>{
     }
 }
 
+
 const getVideogamesById = async(req, res, next) =>{
     const id = req.params.id;
     if(id){
         try{
             if(!id.includes("-")){
-                const idApi = await axios.get(`https://api.rawg.io/api/games/${id}?key=8483b3abd0774e898a6add0aa27122b7`)
+                const idApi = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
                 const info = {
                     image: idApi.data.background_image,
                     name: idApi.data.name,
@@ -133,24 +133,15 @@ const getVideogamesById = async(req, res, next) =>{
 
 const postVideogames = async(req, res, next) =>{
     try{
-        const { name, description, released, rating, platforms, genres } = req.body;
+        const { image, name, description, released, rating, platforms, genres } = req.body;
         let createVideoGame = await Videogame.create({
-            // image, 
+            image, 
             name,
             description,
             released, 
             rating,
             platforms 
         })
-        // const mapeo = createVideoGame.map(el => {
-        //     return {
-        //     name: el.name,
-        //     description: el.description,
-        //     released: el.released, 
-        //     rating: el.rating,
-        //     platforms: el.platform
-        //     }
-        // })
         genres.forEach(async el => {
             const genre = await Genre.findOne({where:{name: el}})
             await createVideoGame.setGenres(genre.dataValues.id)
