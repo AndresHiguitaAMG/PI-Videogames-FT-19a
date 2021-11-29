@@ -2,6 +2,8 @@ import { React, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getVideogames } from '../../Redux/actions';
 import Cards from '../Cards/Cards';
+import FilterByOrigen from '../Filters/FilterByOrigen';
+import OrderByName from '../Ordinances/OrderByName';
 import Paged from '../Paged/Paged';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -29,6 +31,15 @@ const Home = () => {
             <div>
                 <SearchBar />
             </div>
+
+            <div>
+                <OrderByName />
+            </div>
+
+            <div>
+                <FilterByOrigen />
+            </div>
+
             <div>
                 {
                     currentVideogames?.length > 0 ?

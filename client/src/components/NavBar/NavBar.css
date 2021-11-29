@@ -1,0 +1,7 @@
+.NavBarContainer{
+    background-color: rgb(33, 219, 27);
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 1rem;
+}
