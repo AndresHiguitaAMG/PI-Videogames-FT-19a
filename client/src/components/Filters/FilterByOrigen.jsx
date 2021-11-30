@@ -11,9 +11,9 @@ const FilterByOrigen = () => {
     }
     return (
         <div>
-            <span>Filter By Origen:</span>
+            <span>Filter By Origen :</span>
             <select onChange={handleSelectOrigen}>
-                <option value = "All">All</option>
+                <option value = "All">-- All --</option>
                 <option value = "Existing">Existing</option>
                 <option value = "Created">Created</option>
             </select>

@@ -1,5 +1,5 @@
 import { GET_VIDEOGAMES, SET_NAME, GET_VIDEOGAMES_BY_ID, REMOVE_VIDEOGAME,
-GET_GENRES, GET_PLATFORMS, FILTER_BY_ORIGEN, SET_ORDER } from '../actions/index';
+GET_GENRES, GET_PLATFORMS, FILTER_BY_ORIGEN, SET_ORDER, FILTER_BY_GENRES } from '../actions/index';
 
 const initialState = {
     videogames: [],
@@ -60,7 +60,14 @@ export default function reducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 order: payload
-            }    
+            } 
+            
+        case FILTER_BY_GENRES:
+            const FilteredGenres = payload === "All" ? state.videogame : state.videogame.filter(el => el.genres.includes(payload))
+            return {
+                ...state,
+                videogames: FilteredGenres
+            }
         default:
             return state;
     }

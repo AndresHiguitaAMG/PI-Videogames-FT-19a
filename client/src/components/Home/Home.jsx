@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getVideogames } from '../../Redux/actions';
 import Cards from '../Cards/Cards';
+import FilterByGenres from '../Filters/FilterByGenres';
 import FilterByOrigen from '../Filters/FilterByOrigen';
 import OrderByName from '../Ordinances/OrderByName';
 import Paged from '../Paged/Paged';
@@ -33,11 +34,17 @@ const Home = () => {
             </div>
 
             <div>
-                <OrderByName />
+                <OrderByName 
+                setCurrentPage = {setCurrentPage}
+                />
             </div>
 
             <div>
                 <FilterByOrigen />
+            </div>
+
+            <div>
+                <FilterByGenres />
             </div>
 
             <div>
