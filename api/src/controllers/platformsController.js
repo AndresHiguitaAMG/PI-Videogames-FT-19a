@@ -7,7 +7,7 @@ const getPlatforms = async (req, res, next) => {
         const namePlatform = responsePlatforms.data.results.map(el => el.name)
         return res.json(namePlatform); 
     } catch (error) {
-        console.log(error);
+        next(error);
     }
 }
 

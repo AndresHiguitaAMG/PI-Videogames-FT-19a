@@ -10,6 +10,9 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
+    image: {
+      type: DataTypes.STRING
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -27,6 +30,11 @@ module.exports = (sequelize) => {
     platforms: {
       type: DataTypes.JSON,
       allowNull: false,
+    },
+    createdInDatabase: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
     }
   });
 };

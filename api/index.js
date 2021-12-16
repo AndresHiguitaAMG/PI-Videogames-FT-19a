@@ -26,9 +26,9 @@ const { API_KEY } = process.env;
 conn.sync({ force: true }).then(() => {
   server.listen(3001, async () => {
     const infoApi = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`);
-    const content = infoApi.data.results.map(el => el.name)
-    content.forEach(el =>{
-      Promise.all([Genre.create({name: el})]) 
+    const content = infoApi.data.results;
+    content.forEach(async el => {
+      await Genre.create({name: el.name})
     })
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
