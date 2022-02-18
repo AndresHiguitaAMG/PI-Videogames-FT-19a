@@ -4,10 +4,12 @@ import './NavBar.css';
 
 const NavBar = () => {
     return (
-        <div>
+        <div className="NavBarContainer">
+            <div className = "home">
             <NavLink to = "/home">
                 Home
             </NavLink>
+            </div>
 
             <NavLink to = "/home/create">
                 Create a videogame

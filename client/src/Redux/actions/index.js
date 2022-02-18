@@ -9,6 +9,7 @@ export const GET_PLATFORMS = 'GET_PLATFORMS';
 export const FILTER_BY_ORIGEN = 'FILTER_BY_ORIGEN';
 export const SET_ORDER = 'SET_ORDER';
 export const FILTER_BY_GENRES = 'FILTER_BY_GENRES';
+export const ORDER_BY_RATING = 'ORDER_BY_RATING';
 
 export function getVideogames ({ name, order }) {
     return (dispatch) => {
@@ -111,6 +112,13 @@ export function setOrder (order) {
 export function filterByGenres (payload) {
     return {
         type: FILTER_BY_GENRES,
+        payload
+    }
+}
+
+export function orderByRating (payload) {
+    return {
+        type: ORDER_BY_RATING,
         payload
     }
 }

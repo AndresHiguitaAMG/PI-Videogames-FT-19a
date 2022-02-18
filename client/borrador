@@ -1,0 +1,94 @@
+<!-- <div className = "container">
+            <div className = "container-cards">
+                <div className = "card-image">
+                    <img src={image} alt="img not found" />
+                </div>
+                
+                <div className = "card-text">
+                    <h3>{name}</h3>
+                    <p  className = "cards-genres">{getGenres()}</p>
+                </div>
+                
+                <div className = "card-footer">
+                    <NavLink to={`/detail/${id}`}>
+                        <button>Read More</button>
+                    </NavLink>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+        <!-- body {
+            box-sizing: border-box;
+            background: rgb(6, 65, 121);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+        }
+        
+        @media screen and (min-width:400px) {
+            .container-cards {
+                display: flex;
+                flex-wrap: wrap;
+                /* width: 300px;
+                margin: 10px;
+                background-color: white;
+                border-radius: 15px;
+                transition: 0.2s; */
+            }
+        }
+        
+        .card-image img {
+            max-width: 100%;
+            /* border-radius: 10px 10px 0px 0px; */
+        }
+        
+        /* .card-text h3 {
+            text-align: center;
+        }
+        
+        .card-text p {
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-footer button {
+            width: 150px;
+            background: black;
+            color: white;
+            border-radius: 15px;
+            border: 2px solid black;
+            padding: 6px;
+            font-size: 17px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.2s;
+        }
+        
+        .card-footer button:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+        
+        }
+        
+        .cards:hover {
+            box-shadow: 3.9px 7.8px 20px hsl(0deg 0% 0% / 0.38); 
+        }  */ -->
+        
+        

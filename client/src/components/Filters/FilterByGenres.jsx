@@ -20,11 +20,11 @@ const FilterByGenres = () => {
             <span>Filter By Genres: </span>
             <select onChange = {handleSelectGenres}>
                 <option value = "All">-- All --</option>
-                <option name = "genres" key = "genr"></option>
+                <option name = "genres"></option>
                 {
                     genres.map((el) => {
                         return (
-                            <option value = {el} name = "genres" key = {el}>{el}</option>
+                            <option value = {el.name} name = "genres" key={el.id} >{el.name}</option>
                         )
                     })
                 }

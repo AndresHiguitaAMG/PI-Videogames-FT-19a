@@ -1,7 +1,11 @@
 .NavBarContainer{
-    background-color: rgb(33, 219, 27);
+    background-color: rgb(159, 163, 159);
     height: 50px;
     display: flex;
     justify-content: left;
     margin-bottom: 1rem;
+}
+
+.home {
+    justify-content: right;
 }

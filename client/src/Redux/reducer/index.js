@@ -1,5 +1,7 @@
-import { GET_VIDEOGAMES, SET_NAME, GET_VIDEOGAMES_BY_ID, REMOVE_VIDEOGAME,
-GET_GENRES, GET_PLATFORMS, FILTER_BY_ORIGEN, SET_ORDER, FILTER_BY_GENRES } from '../actions/index';
+import { 
+    GET_VIDEOGAMES, SET_NAME, GET_VIDEOGAMES_BY_ID, REMOVE_VIDEOGAME, GET_GENRES, 
+    GET_PLATFORMS, FILTER_BY_ORIGEN, SET_ORDER, FILTER_BY_GENRES, ORDER_BY_RATING} 
+    from '../actions/index';
 
 const initialState = {
     videogames: [],
@@ -68,6 +70,28 @@ export default function reducer(state = initialState, { type, payload }) {
                 ...state,
                 videogames: FilteredGenres
             }
+
+        case ORDER_BY_RATING:
+            if (payload === "asc") {
+                const ratingOrder = state.videogames.sort(function(a, b) {
+                    return a.rating - b.rating 
+                })
+                return {
+                    ...state,
+                    videogames: ratingOrder
+                }
+            }
+            if (payload === "desc") {
+                const ratingOrder = state.videogames.sort(function(a, b) {
+                    return b.rating - a.rating 
+                })
+                return {
+                    ...state,
+                    videogames: ratingOrder
+                }
+            }
+            return state
+
         default:
             return state;
     }

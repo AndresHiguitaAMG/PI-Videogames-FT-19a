@@ -13,9 +13,9 @@ const OrderByName = () => {
     return (
     <div>
         <span>Order By Name: </span>
-        <select onChange={handleSelectName}>
-            <option value = "asc">Ascendente</option>
-            <option value = "desc">Descendente</option>
+        <select onChange= {handleSelectName}>
+            <option value = "asc">-- Ascendente --</option>
+            <option value = "desc">-- Descendente --</option>
         </select>
     </div>
     );

@@ -7,7 +7,6 @@ const SearchBar = () => {
     const dispatch = useDispatch();
 
     const handleOnChange = (e) =>{
-        e.preventDefault();
         setInput(e.target.value);
     }
 
@@ -15,7 +14,8 @@ const SearchBar = () => {
         e.preventDefault();
         dispatch(setName(input)); //Guarda el input en el store
         dispatch(getVideogames({name: input}))
-        setInput("")
+        setInput("");
+        console.log(input);
     }
 
     return (

@@ -1,4 +1,4 @@
-.container{
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
 }
 
-.logo{
+.logo {
     width: 700px;
     height: 300px;
     animation-duration: 3s;
@@ -16,7 +16,7 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes logo{
+@keyframes logo {
     50%{
         width: 700px;
         height: 300px;

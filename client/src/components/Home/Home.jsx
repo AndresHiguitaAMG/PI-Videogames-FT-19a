@@ -5,8 +5,10 @@ import Cards from '../Cards/Cards';
 import FilterByGenres from '../Filters/FilterByGenres';
 import FilterByOrigen from '../Filters/FilterByOrigen';
 import OrderByName from '../Ordinances/OrderByName';
+import OrderByRating from '../Ordinances/OrderByRating';
 import Paged from '../Paged/Paged';
 import SearchBar from '../SearchBar/SearchBar';
+import './Home.modules.css';
 
 
 const Home = () => {
@@ -28,7 +30,7 @@ const Home = () => {
 
     
     return (
-        <div>
+        <div className = "home-order">
             <div>
                 <SearchBar />
             </div>
@@ -40,6 +42,10 @@ const Home = () => {
             </div>
 
             <div>
+                <OrderByRating />
+            </div>
+
+            <div>
                 <FilterByOrigen />
             </div>
 
@@ -47,15 +53,16 @@ const Home = () => {
                 <FilterByGenres />
             </div>
 
-            <div>
+            <div className = "cards-container">
                 {
                     currentVideogames?.length > 0 ?
-                    currentVideogames?.length > 0 && currentVideogames.map((el) => {
+                    currentVideogames.map((el) => {
                         return <Cards image={el.image} name={el.name} genres={el.genres} id={el.id} key={el.id} />
                     })
                     :
                     <div>Cargando...</div>
                 }
+            </div>
 
                 <div>
                     <Paged 
@@ -64,7 +71,6 @@ const Home = () => {
                     totalPages = {totalPages}
                     />
                 </div>
-            </div>
         </div>
     );
 }

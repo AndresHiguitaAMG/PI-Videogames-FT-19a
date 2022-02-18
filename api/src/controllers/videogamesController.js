@@ -163,6 +163,7 @@ const getVideogamesById = async (req, res, next) => {
           released: idApi.data.released,
           rating: idApi.data.rating,
           platforms: idApi.data.platforms.map((el) => el.platform.name),
+          id: idApi.data.id
         };
         res.json(info);
       } else {
@@ -180,6 +181,7 @@ const getVideogamesById = async (req, res, next) => {
           released: dB.released,
           rating: dB.rating,
           platforms: dB.platforms,
+          id: dB.id
         };
         if (!dB) {
           return res.status(400).send({ message: "It was not found" });

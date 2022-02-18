@@ -1,6 +1,9 @@
 .pageNumbers {
     list-style: none;
     display: flex;
+    justify-content:center;
+    margin: 10px;
+    padding: 10px;
 }
 
 .pageNumbers li {
@@ -13,3 +16,4 @@
     background-color: white;
     color: black;
 }
+
